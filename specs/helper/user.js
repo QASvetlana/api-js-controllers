@@ -8,12 +8,12 @@ let token = ''
 
 //контроллер user - это управление юзером
 const user = {
-    //Функции авторизации
+    //Функции создания пользователя
 
     login: (payload) => {
         //вызвали урл из конфига
         return supertest(url)
-        .post('/Account/AccountV1AuthorizedPost')
+        .post('/Account/v1/Authorized')
         //вызвали апи и в нее устанавливаем
         .set('Accept', 'application/json')
         //отправили payload

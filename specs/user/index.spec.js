@@ -7,34 +7,31 @@ import { async } from "regenerator-runtime";
   describe('POST /Account/AccountV1AuthorizedPost', () => {
     test('Метод должен существовать', async () => {
       const res = await supertest('https://bookstore.demoqa.com')
-          .post('/Account/AccountV1AuthorizedPost')
+          .post('/Account/v1/Authorized')
           .send({})
 
       expect(res.status).not.toEqual(404);
     })
 
-  /*  test('Авторизация должна проходить успешно с правильным логином и паролем', async () => {
+  test('Авторизация должна проходить успешно с правильным логином и паролем', async () => {
       const res = await user.login(config.credentials)
 
       expect(res.status).toEqual(200);
-      expect(typeof res.body.token).toEqual('string')
     })
-
+ 
     test('Авторизация должна возвращать статус с кодом ошибки если логин неверный', async () => {
-      const res = await user.login({username: 'demo4', password: 'demo'})
+      const res = await user.login({username: 'eveholt1', password: '12345Qwerty!'})
 
-      expect(res.status).toEqual(412);
-      expect(res.body.code).toEqual(1011)
+      expect(res.status).toEqual(400)
     })
 
     test('Авторизация должна возвращать статус с кодом ошибки если пароль неверный', async () => {
-      const res = await user.login({username: 'demo', password: 'demo3'})
+      const res = await user.login({username: 'ExistingUser', password: 'demo3'})
 
-      expect(res.status).toEqual(412);
-      expect(res.body.code).toEqual(1011)
+      expect(res.status).toEqual(400);
     })
   })
-
+ /*
   describe('GET /api/v1/user', () => {
     test('Получение информации о пользователе', async() => {
       const token = await user.getAuthToken();
@@ -42,5 +39,5 @@ import { async } from "regenerator-runtime";
       const res = await user.user(token);
       expect(res.status).toEqual(200);
     })*/
-  })
+  
   

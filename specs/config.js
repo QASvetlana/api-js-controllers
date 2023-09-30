@@ -2,8 +2,8 @@
 const config = {
     url: 'https://bookstore.demoqa.com', // base url
     credentials: {
-        userName: 'eveholt',
-        password: 'cityslicka'
+        userName: 'ExistingUser',
+        password: '12345Qwerty!'
 }
 }
 export default config; // делаем возможность экспорта
